@@ -10,9 +10,15 @@ const app = express();
 
 const categories = require("./routes/api/categories");
 
+const reviews = require("./routes/api/reviews");
+
 app.use(cors());
 
+app.use(express.json());
+
 app.use("/api/categories", categories);
+
+app.use("/api/reviews", reviews);
 
 app.use(async (req, res, next) => {
   const { method, url } = req;
