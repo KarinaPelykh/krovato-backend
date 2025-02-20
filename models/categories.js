@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const categoriesSchema = new Schema({
   quantity: String,
-  beds: Array,
+  product: Array,
   image: String,
   title: String,
 });
