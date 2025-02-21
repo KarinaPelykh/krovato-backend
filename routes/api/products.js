@@ -2,4 +2,8 @@ const express = require("express");
 
 const route = express.Router();
 
-route("/product", _);
+const controller = require("../../controller/products");
+
+route.get("/", controller.getAllProduct);
+
+module.exports = route;

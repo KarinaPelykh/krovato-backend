@@ -12,6 +12,10 @@ const categories = require("./routes/api/categories");
 
 const reviews = require("./routes/api/reviews");
 
+const products = require("./routes/api/products");
+
+const blogs = require("./routes/api/blogs");
+
 app.use(cors());
 
 app.use(express.json());
@@ -19,6 +23,10 @@ app.use(express.json());
 app.use("/api/categories", categories);
 
 app.use("/api/reviews", reviews);
+
+app.use("/api/products", products);
+
+app.use("/api/blogs", blogs);
 
 app.use(async (req, res, next) => {
   const { method, url } = req;
