@@ -1,0 +1,31 @@
+type: object
+
+properties:
+  _id:
+    description: 'Product ID'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  image:
+    description: 'Photo URL of the product'
+    type: string
+    example: https://res.cloudinary.com/ddtwrftjl/image/upload/v1740059258/img-6_w3a5xx.jpg
+  size:
+    description: 'Size of the product'
+    type: string
+    example: 'Розмір: 61 x 184 x 2130 мм'
+  title:
+    description: 'Name of product'
+    type: string
+    example: 'Ліжко Аргон з підйомним механізмом'
+  isAvailable:
+    description: 'Is in stack or not'
+    type: boolean
+    example: true
+  price:
+    description: 'Price of product'
+    type: string
+    example: '16 400 грн.'
+  sale:
+    description: 'Discounted price'
+    type: string
+    example: '6 400 грн.'

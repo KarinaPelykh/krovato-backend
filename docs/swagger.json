@@ -1,0 +1,574 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "krovato",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "description": "This is a documentation of krovato app"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    },
+    {
+      "url": "https://example.com/api/v1"
+    }
+  ],
+  "security": [],
+  "tags": [
+    {
+      "name": "krovato",
+      "description": "Operations about shop krovato."
+    },
+    {
+      "name": "Auth",
+      "description": "Auth operations."
+    }
+  ],
+  "paths": {
+    "/products": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "summary": "Get all products",
+        "operationId": "getProducts",
+        "description": "Get all products",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "65ca67e7ae7f10c88b598384"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get list with all products",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully got all products!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/products"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/categories": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get all categories",
+        "operationId": "getCategories",
+        "description": "Get all categories",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "65ca67e7ae7f10c88b598384"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get list with all categories",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully got all categories!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/categories"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/categories/{id}": {
+      "get": {
+        "tags": [
+          "Categories"
+        ],
+        "summary": "Get category  by  _id",
+        "operationId": "getCategory",
+        "description": "Get category  by  _id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "65ca67e7ae7f10c88b598384"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get category by _id",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully got category by _id!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/categories"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/blogs": {
+      "get": {
+        "tags": [
+          "Blogs"
+        ],
+        "summary": "Get all blogs",
+        "operationId": "getBlogs",
+        "description": "Get all blogs",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "65ca67e7ae7f10c88b598384"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get list with all blogs",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully got all blogs!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/blogs"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/reviews": {
+      "get": {
+        "tags": [
+          "Reviews"
+        ],
+        "summary": "Get all reviews",
+        "operationId": "getReviews",
+        "description": "Get all reviews",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "65ca67e7ae7f10c88b598384"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Get list with all reviews",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 200
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully got all reviews!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/reviews"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    },
+    "/reviews/add": {
+      "post": {
+        "tags": [
+          "Review"
+        ],
+        "summary": "Create review",
+        "operationId": "createReview",
+        "description": "Create a review with payload",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "reviews",
+                  "user",
+                  "mark",
+                  "date",
+                  "product"
+                ],
+                "properties": {
+                  "reviews": {
+                    "description": "User review of the product",
+                    "type": "string",
+                    "example": "it has good quality"
+                  },
+                  "user": {
+                    "description": "User name",
+                    "type": "string",
+                    "example": "Qoli"
+                  },
+                  "mark": {
+                    "description": "Users mark of product",
+                    "type": "string",
+                    "example": "2"
+                  },
+                  "date": {
+                    "description": "Date creating review",
+                    "type": "string",
+                    "example": "02.03.2024"
+                  },
+                  "product": {
+                    "description": "Product for with  was creating review",
+                    "type": "string",
+                    "example": "Sofa MD"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Creates a review",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "status",
+                    "message",
+                    "data"
+                  ],
+                  "properties": {
+                    "status": {
+                      "type": "integer",
+                      "example": 201
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Successfully created a review!"
+                    },
+                    "data": {
+                      "type": "object",
+                      "$ref": "#/components/schemas/reviews"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "$ref": "#/components/responses/401"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "products": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "description": "Product ID",
+            "type": "string",
+            "example": "65e4decdd286b30065d54af9"
+          },
+          "image": {
+            "description": "Photo URL of the product",
+            "type": "string",
+            "example": "https://res.cloudinary.com/ddtwrftjl/image/upload/v1740059258/img-6_w3a5xx.jpg"
+          },
+          "size": {
+            "description": "Size of the product",
+            "type": "string",
+            "example": "Розмір: 61 x 184 x 2130 мм"
+          },
+          "title": {
+            "description": "Name of product",
+            "type": "string",
+            "example": "Ліжко Аргон з підйомним механізмом"
+          },
+          "isAvailable": {
+            "description": "Is in stack or not",
+            "type": "boolean",
+            "example": true
+          },
+          "price": {
+            "description": "Price of product",
+            "type": "string",
+            "example": "16 400 грн."
+          },
+          "sale": {
+            "description": "Discounted price",
+            "type": "string",
+            "example": "6 400 грн."
+          }
+        }
+      },
+      "categories": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "description": "Category ID",
+            "type": "string",
+            "example": "65e4decdd286b30065d54af9"
+          },
+          "quantity": {
+            "description": "Quantity of the product",
+            "type": "string",
+            "example": "54"
+          },
+          "image": {
+            "description": "Photo URL of the product",
+            "type": "string",
+            "example": "https://res.cloudinary.com/ddtwrftjl/image/upload/v1739983143/img_qojx…"
+          },
+          "title": {
+            "description": "Name of product",
+            "type": "string",
+            "example": "Ліжка"
+          },
+          "product": {
+            "description": "Is in stack",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "example": []
+          }
+        }
+      },
+      "blogs": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "description": "Blog ID",
+            "type": "string",
+            "example": "65e4decdd286b30065d54af9"
+          },
+          "title": {
+            "description": "Name of product",
+            "type": "string",
+            "example": "Ліжка"
+          },
+          "image": {
+            "description": "Photo URL of the product",
+            "type": "string",
+            "example": "https://res.cloudinary.com/ddtwrftjl/image/upload/v1739983143/img_qojx…"
+          },
+          "additionINf": {
+            "description": "",
+            "type": "array",
+            "items": {
+              "type": "object"
+            },
+            "example": []
+          }
+        }
+      },
+      "reviews": {
+        "type": "object",
+        "properties": {
+          "_id": {
+            "description": "Product ID",
+            "type": "string",
+            "example": "65e4decdd286b30065d54af9"
+          },
+          "reviews": {
+            "description": "User review of the product",
+            "type": "string",
+            "example": "it has good quality"
+          },
+          "user": {
+            "description": "User name",
+            "type": "string",
+            "example": "Qoli"
+          },
+          "mark": {
+            "description": "Users mark of product",
+            "type": "string",
+            "example": "2"
+          },
+          "date": {
+            "description": "Date creating review",
+            "type": "string",
+            "example": "02.03.2024"
+          },
+          "product": {
+            "description": "Product for with  was creating review",
+            "type": "string",
+            "example": "Sofa MD"
+          }
+        }
+      }
+    },
+    "responses": {
+      "401": {
+        "description": "Unauthorized error",
+        "content": {
+          "application/json": {
+            "schema": {
+              "type": "object",
+              "required": [
+                "status",
+                "message",
+                "data"
+              ],
+              "properties": {
+                "status": {
+                  "type": "integer",
+                  "example": 401
+                },
+                "message": {
+                  "type": "string",
+                  "example": "UnauthorizedError"
+                },
+                "data": {
+                  "type": "object",
+                  "required": [
+                    "message"
+                  ],
+                  "properties": {
+                    "message": {
+                      "type": "string",
+                      "example": "Access token expired"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

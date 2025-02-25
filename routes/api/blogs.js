@@ -1,8 +1,9 @@
-const express = require("express");
+const express = require('express')
 
-const route = express.Router();
+const route = express.Router()
 
-const controller = require("../../controller/blogs");
+const controller = require('../../controller/blogs')
 
-route.get("/", controller.getAllBlogs);
-module.exports = route;
+route.get('/', controller.getAllBlogs)
+
+module.exports = route

@@ -1,0 +1,60 @@
+tags:
+  - Review
+summary: Create review
+operationId: createReview
+description: 'Create a review with payload'
+requestBody:
+  content:
+    multipart/form-data:
+      schema:
+        type: object
+        required:
+          - reviews
+          - user
+          - mark
+          - date
+          - product
+        properties:
+          reviews:
+            description: 'User review of the product'
+            type: string
+            example: it has good quality
+          user:
+            description: 'User name'
+            type: string
+            example: 'Qoli'
+          mark:
+            description: 'Users mark of product'
+            type: string
+            example: '2'
+          date:
+            description: 'Date creating review'
+            type: string
+            example: '02.03.2024'
+          product:
+            description: 'Product for with  was creating review'
+            type: string
+            example: 'Sofa MD'
+responses:
+  '201':
+    description: Creates a review
+    content:
+      application/json:
+        schema:
+          type: object
+          required:
+            - status
+            - message
+            - data
+          properties:
+            status:
+              type: integer
+              example: 201
+            message:
+              type: string
+              example: Successfully created a review!
+            data:
+              type: object
+              $ref: '../../components/schemas/reviews.yaml'
+  '401':
+    $ref: '../../components/responses/401.yaml'

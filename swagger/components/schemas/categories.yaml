@@ -1,0 +1,25 @@
+type: object
+
+properties:
+  _id:
+    description: 'Category ID'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  quantity:
+    description: 'Quantity of the product'
+    type: string
+    example: '54'
+  image:
+    description: 'Photo URL of the product'
+    type: string
+    example: 'https://res.cloudinary.com/ddtwrftjl/image/upload/v1739983143/img_qojx…'
+  title:
+    description: 'Name of product'
+    type: string
+    example: 'Ліжка'
+  product:
+    description: 'Is in stack'
+    type: array
+    items:
+      type: object
+    example: []

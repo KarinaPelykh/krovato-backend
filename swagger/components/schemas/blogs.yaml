@@ -1,0 +1,21 @@
+type: object
+
+properties:
+  _id:
+    description: 'Blog ID'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  title:
+    description: 'Name of product'
+    type: string
+    example: 'Ліжка'
+  image:
+    description: 'Photo URL of the product'
+    type: string
+    example: 'https://res.cloudinary.com/ddtwrftjl/image/upload/v1739983143/img_qojx…'
+  additionINf:
+    description: ''
+    type: array
+    items:
+      type: object
+    example: []

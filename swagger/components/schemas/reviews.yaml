@@ -1,0 +1,27 @@
+type: object
+
+properties:
+  _id:
+    description: 'Product ID'
+    type: string
+    example: 65e4decdd286b30065d54af9
+  reviews:
+    description: 'User review of the product'
+    type: string
+    example: it has good quality
+  user:
+    description: 'User name'
+    type: string
+    example: 'Qoli'
+  mark:
+    description: 'Users mark of product'
+    type: string
+    example: '2'
+  date:
+    description: 'Date creating review'
+    type: string
+    example: '02.03.2024'
+  product:
+    description: 'Product for with  was creating review'
+    type: string
+    example: 'Sofa MD'

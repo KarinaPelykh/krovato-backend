@@ -1,0 +1,38 @@
+# docs/openapi.yaml
+
+openapi: 3.1.0
+info:
+  version: 1.0.0
+  title: krovato
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  description: This is a documentation of krovato app
+tags:
+  - name: krovato
+    description: Operations about shop krovato.
+  - name: Auth
+    description: Auth operations.
+servers:
+  - url: http://localhost:3000
+  - url: https://example.com/api/v1
+paths:
+  /products:
+    get:
+      $ref: '../swagger/paths/products/get.yaml'
+  /categories:
+    get:
+      $ref: '../swagger/paths/categories/get.yaml'
+  /categories/{id}:
+    get:
+      $ref: '../swagger/paths/categories/{id}/get.yaml'
+  /blogs:
+    get:
+      $ref: '../swagger/paths/blogs/get.yaml'
+  /reviews:
+    get:
+      $ref: '../swagger/paths/reviews/get.yaml'
+  /reviews/add:
+    post:
+      $ref: '../swagger/paths/reviews/post.yaml'
+security: []
