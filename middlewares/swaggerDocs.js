@@ -1,11 +1,11 @@
-// const createHttpError = require('http-errors')
-import swaggerUI from 'swagger-ui-express'
-import fs from 'node:fs'
-import path from 'node:path'
 
-export const SWAGGER_PATH = path.join(process.cwd(), 'docs', 'swagger.json')
+const swaggerUI = require('swagger-ui-express');
+const fs = require('node:fs');
+const path = require('node:path');
 
-export const swaggerDocs = () => {
+ const SWAGGER_PATH = path.join(process.cwd(), 'docs', 'swagger.json')
+
+ const swaggerDocs = () => {
   try {
     const swaggerDoc = JSON.parse(fs.readFileSync(SWAGGER_PATH).toString())
     return [...swaggerUI.serve, swaggerUI.setup(swaggerDoc)]
@@ -13,3 +13,5 @@ export const swaggerDocs = () => {
     return (req, res, next) => next()
   }
 }
+
+module.exports ={swaggerDocs}

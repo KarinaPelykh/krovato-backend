@@ -18,7 +18,7 @@ const products = require('./routes/api/products')
 
 const blogs = require('./routes/api/blogs')
 
-const { swaggerDocs } = require('./middlewares/swaggerDocs.js')
+const  {swaggerDocs}  = require('./middlewares/swaggerDocs')
 
 app.use(cors())
 
