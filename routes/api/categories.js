@@ -1,17 +1,17 @@
-const express = require("express");
+const express = require('express')
 
-const controller = require("../../controller/categories");
+const controller = require('../../controller/categories')
 
-const { validateBody } = require("../../decorator");
+// const { validateBody } = require('../../decorator')
 
-const { categorySchema } = require("../../schemas");
+// const { categorySchema } = require('../../schemas')
 
-const addCategorySchema = validateBody(categorySchema);
+// const addCategorySchema = validateBody(categorySchema)
 
-const route = express.Router();
+const route = express.Router()
 
-route.get("/", addCategorySchema, controller.getAll);
+route.get('/', controller.getAll)
 
-route.get("/:id", addCategorySchema, controller.getById);
+route.get('/:id', controller.getById)
 
-module.exports = route;
+module.exports = route
