@@ -1,5 +1,7 @@
 const express = require('express')
 
+require("dotenv").config()
+
 const moment = require('moment')
 
 const fs = require('fs/promises')
